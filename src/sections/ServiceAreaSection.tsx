@@ -13,8 +13,8 @@ export function ServiceAreaSection() {
 
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
               We’re based in London and typically cover{" "}
-              <span className="font-semibold text-slate-900">up to ~50 miles</span> for roof repairs,
-              new roofs, flat roofing, guttering, and emergency call-outs.
+              <span className="font-semibold text-slate-900">up to ~50 miles</span> for house extensions,
+              loft conversions, and full property renovations.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">

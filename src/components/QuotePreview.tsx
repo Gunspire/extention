@@ -13,7 +13,7 @@ type QuotePreviewPayload = {
   quoteNumber: string;
   createdAt: string;
   customer: { name: string; postcode: string; email: string; phone: string };
-  job: { roofTypeLabel: string; serviceLabel: string; areaSqm: number };
+  job: { projectTypeLabel: string; workTypeLabel: string; areaSqm: number };
   items: LineItem[];
   subtotalPence: number;
   vatPence: number;
@@ -21,7 +21,7 @@ type QuotePreviewPayload = {
   notes: string;
 };
 
-const STORAGE_KEY = "apex_quote_preview_v1";
+const STORAGE_KEY = "convert_extend_quote_preview_v1";
 
 export function QuotePreview() {
   const router = useRouter();
@@ -82,10 +82,10 @@ export function QuotePreview() {
         <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
           <div className="px-7 sm:px-10 py-8 border-b border-slate-200 flex items-start justify-between gap-6">
             <div className="flex items-center gap-3">
-              <Logo className="h-[66px] sm:h-[72px]" />
+              <Logo className="h-[34px] sm:h-[38px]" />
               <div>
                 <div className="text-lg font-extrabold tracking-tight text-slate-900">
-                  EliteGuard Roofing
+                  Convert Extend
                 </div>
                 <div className="text-xs font-semibold text-slate-500">
                   Quote preview (demo) • Created {quote.createdAt}
@@ -119,9 +119,9 @@ export function QuotePreview() {
                 <div className="text-xs font-extrabold tracking-wider text-slate-500 uppercase">
                   Job details
                 </div>
-                <div className="mt-2 text-sm font-bold text-slate-900">{quote.job.serviceLabel}</div>
+                <div className="mt-2 text-sm font-bold text-slate-900">{quote.job.projectTypeLabel}</div>
                 <div className="text-sm text-slate-600 mt-1">
-                  {quote.job.roofTypeLabel} • {quote.job.areaSqm} m²
+                  {quote.job.workTypeLabel} • {quote.job.areaSqm} m²
                 </div>
                 <div className="text-sm text-slate-600 mt-1">Subject to survey and access</div>
               </div>

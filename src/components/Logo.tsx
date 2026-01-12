@@ -11,7 +11,7 @@ type LogoProps = {
 };
 
 export function Logo({ className, alt = "Convert Extend", variant = "default" }: LogoProps) {
-  const [src] = React.useState("/convert-extend-logo.svg");
+  const [src, setSrc] = React.useState("/logo.webp");
 
   return (
     <img
@@ -24,6 +24,7 @@ export function Logo({ className, alt = "Convert Extend", variant = "default" }:
       )}
       loading="eager"
       decoding="async"
+      onError={() => setSrc("/convert-extend-logo.svg")}
     />
   );
 }

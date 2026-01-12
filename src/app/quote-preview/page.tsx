@@ -4,8 +4,8 @@ import React from "react";
 import { QuotePreview } from "../../components/QuotePreview";
 
 export const metadata: Metadata = {
-  title: "Quote Preview | Apex Roofing",
-  description: "Preview and print a quote PDF for Apex Roofing.",
+  title: "Quote Preview | Convert Extend",
+  description: "Preview and print a quote PDF for Convert Extend (demo).",
 };
 
 export default function QuotePreviewPage() {

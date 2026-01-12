@@ -14,12 +14,10 @@ export type ServiceHeroProps = {
   description: string;
   backgroundImageSrc: string;
   defaultServiceNeeded:
-    | "New Roof Installation"
-    | "Roof Repairs"
-    | "Flat Roofing (EPDM/Felt)"
-    | "Guttering & Fascias"
-    | "Chimney Repair"
-    | "Emergency Call-out";
+    | "House Extension"
+    | "Loft Conversion"
+    | "Full Property Renovation"
+    | "Not sure yet";
 };
 
 export function ServiceHero({
@@ -111,7 +109,7 @@ export function ServiceHero({
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">Quote Requested!</h2>
                 <p className="text-slate-600">
-                  {"We'll be in touch within 24 hours to discuss your roofing needs."}
+                  {"We'll be in touch within 24 hours to discuss your project."}
                 </p>
                 <Button variant="outline" className="mt-6" onClick={() => setFormStatus("idle")}>
                   Request Another
@@ -162,12 +160,10 @@ export function ServiceHero({
                       defaultValue={defaultServiceNeeded}
                       className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white"
                     >
-                      <option>New Roof Installation</option>
-                      <option>Roof Repairs</option>
-                      <option>Flat Roofing (EPDM/Felt)</option>
-                      <option>Guttering & Fascias</option>
-                      <option>Chimney Repair</option>
-                      <option>Emergency Call-out</option>
+                      <option>House Extension</option>
+                      <option>Loft Conversion</option>
+                      <option>Full Property Renovation</option>
+                      <option>Not sure yet</option>
                     </select>
                   </div>
 

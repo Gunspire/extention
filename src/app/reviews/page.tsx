@@ -10,15 +10,15 @@ import { BottomCtaSection } from "../../sections/BottomCtaSection";
 import { Footer } from "../../sections/Footer";
 
 export const metadata: Metadata = {
-  title: "Reviews | EliteGuard Roofing",
+  title: "Reviews | Convert Extend",
   description:
-    "Read genuine customer reviews and testimonials for EliteGuard Roofing across Google and other trusted platforms.",
+    "Read genuine customer reviews and testimonials for Convert Extend across Google and other trusted platforms.",
   alternates: { canonical: "/reviews" },
 };
 
 const GOOGLE_REVIEWS_URL =
   process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ??
-  "https://www.google.com/search?q=EliteGuard%20Roofing%20reviews";
+  "https://www.google.com/search?q=Convert%20Extend%20reviews";
 
 export default function ReviewsPage() {
   return (
@@ -35,7 +35,7 @@ export default function ReviewsPage() {
               Reviews & testimonials
             </p>
             <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold leading-tight">
-              Trusted local roofers — proven by real customers
+              Trusted local builders — proven by real customers
             </h1>
             <p className="mt-4 text-lg text-slate-200 leading-relaxed">
               We build trust the old‑fashioned way: show up, communicate clearly, do tidy work, and

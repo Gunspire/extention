@@ -5,7 +5,7 @@ import { Footer } from "../../sections/Footer";
 import { MissedCallTextBackSection } from "../../sections/MissedCallTextBackSection";
 
 export const metadata: Metadata = {
-  title: "Missed Call Text-Back | EliteGuard Roofing",
+  title: "Missed Call Text-Back | Convert Extend",
   description: "Demo: automatically text customers back when you miss their call.",
 };
 

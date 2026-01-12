@@ -46,21 +46,21 @@ export function ReviewsSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              text: "EliteGuard Roofing were fantastic from start to finish. Gave a clear quote, turned up on time, and the new roof looks amazing. Left the garden spotless too.",
+              text: "Convert Extend were fantastic from start to finish. Clear quote, tidy site, and the finish is spot on. The new space feels like it’s always been part of the house.",
               author: "Sarah Jenkins",
-              location: "Stockport",
+              location: "South London",
               date: "2 weeks ago",
             },
             {
-              text: "Had a bad leak during the storm. They came out within 2 hours and fixed it temporarily until they could come back for the full repair. Lifesavers.",
+              text: "Great communication throughout our loft conversion. The team were respectful of the house and the handover was clean and thorough.",
               author: "Mike Thompson",
-              location: "Altrincham",
+              location: "Surrey",
               date: "1 month ago",
             },
             {
-              text: "Competitive price for a full re-roof. The lads were polite, hardworking and respectful of our property. Would highly recommend to anyone.",
+              text: "We used Convert Extend for a full renovation. Good sequencing, no drama, and high-quality finishing. Would recommend without hesitation.",
               author: "David Clarke",
-              location: "Didsbury",
+              location: "Hertfordshire",
               date: "2 months ago",
             },
           ].map((review, i) => (

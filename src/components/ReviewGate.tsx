@@ -6,12 +6,12 @@ import { Star } from "lucide-react";
 import { Button } from "./Button";
 import { cn } from "../lib/cn";
 
-const FEEDBACK_EMAIL = "quotes@apexroofing.co.uk";
+const FEEDBACK_EMAIL = "hello@convertextend.co.uk";
 const PHONE_NUMBER_RAW = "08001234567";
 const PHONE_NUMBER_DISPLAY = "0800 123 4567";
 
 const DEFAULT_GOOGLE_REVIEW_URL =
-  "https://www.google.com/search?q=Apex%20Roofing%20Specialists%20Ltd%20reviews";
+  "https://www.google.com/search?q=Convert%20Extend%20reviews";
 
 const GOOGLE_REVIEW_URL = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? DEFAULT_GOOGLE_REVIEW_URL;
 
@@ -89,7 +89,7 @@ export function ReviewGate() {
       <div className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
         <div className="px-6 sm:px-10 py-10 sm:py-12">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold text-blue-700">Apex Roofing</p>
+            <p className="text-sm font-semibold text-blue-700">Convert Extend</p>
             <h1 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
               How was your experience?
             </h1>
@@ -239,7 +239,7 @@ export function ReviewGate() {
           </p>
           <a
             className="text-sm font-bold text-white hover:text-blue-300 transition-colors"
-            href="https://wa.me/447700900000?text=Hi%20Apex%20Roofing%20%E2%80%94%20I%27d%20like%20some%20help%20with%20my%20recent%20job."
+            href="https://wa.me/447700900000?text=Hi%20Convert%20Extend%20%E2%80%94%20I%27d%20like%20some%20help%20with%20my%20recent%20job."
             target="_blank"
             rel="noreferrer"
           >

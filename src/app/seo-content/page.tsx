@@ -5,7 +5,7 @@ import { Footer } from "../../sections/Footer";
 import { SeoContentSection } from "../../sections/SeoContentSection";
 
 export const metadata: Metadata = {
-  title: "SEO + Content | EliteGuard Roofing",
+  title: "SEO + Content | Convert Extend",
   description: "Demo: on‑page SEO and content that helps Google understand your services and rank you higher.",
 };
 

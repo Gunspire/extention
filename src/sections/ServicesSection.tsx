@@ -14,7 +14,7 @@ export function ServicesSection() {
         <ServiceCard
           title="House Extensions"
           description="Rear, side and wraparound extensions — designed to suit your home, built with care, and finished to a high standard."
-          imageSrc="/gallery-2.png"
+          imageSrc="/picture%201.jpg"
           imageAlt="A finished family home exterior after an extension project"
           href="/house-extensions"
           linkLabel="Learn more"
@@ -22,7 +22,7 @@ export function ServicesSection() {
         <ServiceCard
           title="Loft Conversions"
           description="Dormer and hip-to-gable conversions that add bedrooms, offices, and value — with smart layouts and smooth delivery."
-          imageSrc="/gallery-4.png"
+          imageSrc="/picture%202.jpg"
           imageAlt="A renovated home with additional usable space"
           href="/loft-conversions"
           linkLabel="Learn more"
@@ -30,7 +30,7 @@ export function ServicesSection() {
         <ServiceCard
           title="Full Property Renovations"
           description="End-to-end refurbishments: structural changes, electrics, plumbing, plastering, kitchens, bathrooms, and finishes."
-          imageSrc="/gallery-3.png"
+          imageSrc="/picture%203.jpg"
           imageAlt="A completed residential renovation project"
           href="/full-renovations"
           linkLabel="Learn more"

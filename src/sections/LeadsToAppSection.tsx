@@ -25,8 +25,8 @@ function initialLead(): Lead {
     name: "Jamie Taylor",
     phone: "07700 900000",
     postcode: "SW1A 1AA",
-    service: "Roof Repairs",
-    details: "Leak near chimney after heavy rain. Can you call after 5pm?",
+    service: "Loft Conversion",
+    details: "Thinking about a dormer conversion. Can you advise on feasibility and a rough timeline? Call after 5pm.",
     receivedAt: nowTime(),
   };
 }
@@ -62,7 +62,7 @@ export function LeadsToAppSection() {
                     <Bell className="w-4 h-4" />
                     New notification
                   </span>
-                  <span className="text-xs font-semibold text-slate-500">EliteGuard Agency App • {lead.receivedAt}</span>
+                  <span className="text-xs font-semibold text-slate-500">Convert Extend • {lead.receivedAt}</span>
                 </div>
                 <div className="mt-1 text-lg font-extrabold text-slate-900">{lead.name}</div>
                 <div className="mt-1 text-sm font-semibold text-slate-600">

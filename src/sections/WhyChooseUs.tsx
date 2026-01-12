@@ -111,7 +111,7 @@ export function WhyChooseUs() {
             <div className="rounded-3xl border border-slate-200 bg-slate-50 shadow-lg overflow-hidden">
               <div className="aspect-[4/5] relative">
                 <img
-                  src="/gallery-4.png"
+                  src="/picture%204.jpg"
                   alt="A completed home improvement project"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

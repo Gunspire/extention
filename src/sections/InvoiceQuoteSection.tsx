@@ -9,14 +9,8 @@ import { SectionHeading } from "../components/SectionHeading";
 import { UpsidesBox } from "../components/UpsidesBox";
 import { cn } from "../lib/cn";
 
-type RoofType = "pitched_tile" | "slate" | "flat_epdm" | "flat_felt" | "metal";
-type ServiceType =
-  | "repair"
-  | "new_roof"
-  | "flat_replacement"
-  | "guttering"
-  | "chimney_leadwork"
-  | "emergency_callout";
+type ProjectType = "house_extension" | "loft_conversion" | "full_renovation";
+type WorkType = "design_build" | "build_only" | "fit_out";
 
 type LineItem = { label: string; qty?: string; amountPence: number };
 
@@ -24,7 +18,7 @@ type QuotePreviewPayload = {
   quoteNumber: string;
   createdAt: string;
   customer: { name: string; postcode: string; email: string; phone: string };
-  job: { roofTypeLabel: string; serviceLabel: string; areaSqm: number };
+  job: { projectTypeLabel: string; workTypeLabel: string; areaSqm: number };
   items: LineItem[];
   subtotalPence: number;
   vatPence: number;
@@ -32,13 +26,13 @@ type QuotePreviewPayload = {
   notes: string;
 };
 
-const QUOTE_PREVIEW_STORAGE_KEY = "apex_quote_preview_v1";
+const QUOTE_PREVIEW_STORAGE_KEY = "convert_extend_quote_preview_v1";
 
 const COMPANY = {
-  name: "Apex Roofing",
+  name: "Convert Extend",
   phoneDisplay: "0800 123 4567",
   phoneRaw: "08001234567",
-  email: "quotes@apexroofing.co.uk",
+  email: "hello@convertextend.co.uk",
 };
 
 /**
@@ -50,44 +44,34 @@ const PRICING = {
   currency: "GBP",
   vatRate: 0.2,
   minTotalPence: 250_00,
-  roofTypeMultiplier: {
-    pitched_tile: 1.0,
-    slate: 1.15,
-    flat_epdm: 0.95,
-    flat_felt: 0.9,
-    metal: 1.2,
-  } satisfies Record<RoofType, number>,
-  service: {
-    repair: { basePence: 180_00, perSqmPence: 14_00 },
-    new_roof: { basePence: 950_00, perSqmPence: 95_00 },
-    flat_replacement: { basePence: 650_00, perSqmPence: 65_00 },
-    guttering: { basePence: 220_00, perSqmPence: 6_00 },
-    chimney_leadwork: { basePence: 350_00, perSqmPence: 10_00 },
-    emergency_callout: { basePence: 180_00, perSqmPence: 0 },
-  } satisfies Record<ServiceType, { basePence: number; perSqmPence: number }>,
+  projectMultiplier: {
+    house_extension: 1.0,
+    loft_conversion: 0.95,
+    full_renovation: 1.1,
+  } satisfies Record<ProjectType, number>,
+  work: {
+    design_build: { basePence: 300_00, perSqmPence: 30_00 },
+    build_only: { basePence: 250_00, perSqmPence: 26_00 },
+    fit_out: { basePence: 220_00, perSqmPence: 22_00 },
+  } satisfies Record<WorkType, { basePence: number; perSqmPence: number }>,
   addons: {
-    scaffolding: { label: "Scaffolding (if required)", pence: 650_00 },
+    planning: { label: "Planning / building regs support (if required)", pence: 650_00 },
+    engineer: { label: "Structural engineer (if required)", pence: 450_00 },
     skip: { label: "Waste removal / skip", pence: 240_00 },
-    ridge: { label: "Ridge repointing / re-bedding", pence: 280_00 },
-    lead: { label: "Leadwork (minor)", pence: 190_00 },
+    kitchenBath: { label: "Kitchen/bathroom allowance (if applicable)", pence: 1_200_00 },
   },
 } as const;
 
-const ROOF_TYPE_LABEL: Record<RoofType, string> = {
-  pitched_tile: "Pitched (tiles)",
-  slate: "Pitched (slate)",
-  flat_epdm: "Flat roof (EPDM)",
-  flat_felt: "Flat roof (felt)",
-  metal: "Metal roof",
+const PROJECT_TYPE_LABEL: Record<ProjectType, string> = {
+  house_extension: "House extension",
+  loft_conversion: "Loft conversion",
+  full_renovation: "Full property renovation",
 };
 
-const SERVICE_LABEL: Record<ServiceType, string> = {
-  repair: "Roof repair",
-  new_roof: "New roof installation",
-  flat_replacement: "Flat roof replacement",
-  guttering: "Guttering / fascias / soffits",
-  chimney_leadwork: "Chimney / leadwork",
-  emergency_callout: "Emergency call-out",
+const WORK_TYPE_LABEL: Record<WorkType, string> = {
+  design_build: "Design & build (turnkey)",
+  build_only: "Build only (existing plans)",
+  fit_out: "Fit-out & finishing",
 };
 
 function formatGBPFromPence(pence: number) {
@@ -104,8 +88,8 @@ function clampInt(n: number, min: number, max: number) {
 }
 
 function buildQuote(params: {
-  roofType: RoofType;
-  service: ServiceType;
+  projectType: ProjectType;
+  workType: WorkType;
   areaSqm: number;
   postcode: string;
   name: string;
@@ -115,19 +99,19 @@ function buildQuote(params: {
   addons: Record<keyof typeof PRICING.addons, boolean>;
 }) {
   const areaSqm = clampInt(params.areaSqm, 5, 500);
-  const servicePricing = PRICING.service[params.service];
-  const multiplier = PRICING.roofTypeMultiplier[params.roofType];
+  const workPricing = PRICING.work[params.workType];
+  const multiplier = PRICING.projectMultiplier[params.projectType];
 
-  const base = Math.round(servicePricing.basePence * multiplier);
-  const variable = Math.round(servicePricing.perSqmPence * areaSqm * multiplier);
+  const base = Math.round(workPricing.basePence * multiplier);
+  const variable = Math.round(workPricing.perSqmPence * areaSqm * multiplier);
 
   const items: LineItem[] = [
-    { label: `${SERVICE_LABEL[params.service]} — base`, amountPence: base },
+    { label: `${WORK_TYPE_LABEL[params.workType]} — base`, amountPence: base },
   ];
 
-  if (servicePricing.perSqmPence > 0) {
+  if (workPricing.perSqmPence > 0) {
     items.push({
-      label: `${SERVICE_LABEL[params.service]} — size`,
+      label: `${WORK_TYPE_LABEL[params.workType]} — size`,
       qty: `${areaSqm} m²`,
       amountPence: variable,
     });
@@ -153,21 +137,21 @@ function buildQuote(params: {
     vat,
     total,
     createdAt: todayISO(),
-    roofTypeLabel: ROOF_TYPE_LABEL[params.roofType],
-    serviceLabel: SERVICE_LABEL[params.service],
+    projectTypeLabel: PROJECT_TYPE_LABEL[params.projectType],
+    workTypeLabel: WORK_TYPE_LABEL[params.workType],
   };
 }
 
 export function InvoiceQuoteSection() {
   const router = useRouter();
-  const [roofType, setRoofType] = React.useState<RoofType>("pitched_tile");
-  const [service, setService] = React.useState<ServiceType>("repair");
+  const [projectType, setProjectType] = React.useState<ProjectType>("house_extension");
+  const [workType, setWorkType] = React.useState<WorkType>("design_build");
   const [areaSqm, setAreaSqm] = React.useState<number>(40);
   const [addons, setAddons] = React.useState<Record<keyof typeof PRICING.addons, boolean>>({
-    scaffolding: false,
+    planning: true,
+    engineer: false,
     skip: true,
-    ridge: false,
-    lead: false,
+    kitchenBath: false,
   });
 
   const [name, setName] = React.useState("");
@@ -179,8 +163,8 @@ export function InvoiceQuoteSection() {
   const quote = React.useMemo(
     () =>
       buildQuote({
-        roofType,
-        service,
+        projectType,
+        workType,
         areaSqm,
         postcode,
         name,
@@ -189,7 +173,7 @@ export function InvoiceQuoteSection() {
         notes,
         addons,
       }),
-    [roofType, service, areaSqm, postcode, name, email, phone, notes, addons]
+    [projectType, workType, areaSqm, postcode, name, email, phone, notes, addons]
   );
 
   const demoStats = {
@@ -201,7 +185,7 @@ export function InvoiceQuoteSection() {
   const generateQuoteNumber = React.useCallback(() => {
     const seed = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
     const short = seed.replaceAll(".", "").slice(-6).toUpperCase();
-    return `AR-${short}`;
+    return `CE-${short}`;
   }, []);
 
   const [quoteNumber, setQuoteNumber] = React.useState<string>("");
@@ -234,30 +218,30 @@ export function InvoiceQuoteSection() {
               <p className="text-xs font-extrabold tracking-wider text-slate-500 uppercase">Job details</p>
               <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="space-y-1.5">
-                  <label className="text-base font-semibold text-slate-700">Roof type</label>
+                  <label className="text-base font-semibold text-slate-700">Project type</label>
                   <select
-                    value={roofType}
-                    onChange={(e) => setRoofType(e.target.value as RoofType)}
+                    value={projectType}
+                    onChange={(e) => setProjectType(e.target.value as ProjectType)}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white text-base"
                   >
-                    {(Object.keys(ROOF_TYPE_LABEL) as RoofType[]).map((k) => (
+                    {(Object.keys(PROJECT_TYPE_LABEL) as ProjectType[]).map((k) => (
                       <option key={k} value={k}>
-                        {ROOF_TYPE_LABEL[k]}
+                        {PROJECT_TYPE_LABEL[k]}
                       </option>
                     ))}
                   </select>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-base font-semibold text-slate-700">Service</label>
+                  <label className="text-base font-semibold text-slate-700">Work type</label>
                   <select
-                    value={service}
-                    onChange={(e) => setService(e.target.value as ServiceType)}
+                    value={workType}
+                    onChange={(e) => setWorkType(e.target.value as WorkType)}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white text-base"
                   >
-                    {(Object.keys(SERVICE_LABEL) as ServiceType[]).map((k) => (
+                    {(Object.keys(WORK_TYPE_LABEL) as WorkType[]).map((k) => (
                       <option key={k} value={k}>
-                        {SERVICE_LABEL[k]}
+                        {WORK_TYPE_LABEL[k]}
                       </option>
                     ))}
                   </select>
@@ -265,7 +249,7 @@ export function InvoiceQuoteSection() {
 
                 <div className="space-y-1.5">
                   <label className="text-base font-semibold text-slate-700">
-                    Size <span className="text-slate-500">(m²)</span>
+                    Approx. size <span className="text-slate-500">(m²)</span>
                   </label>
                   <div className="rounded-xl border border-slate-200 bg-white px-5 py-4">
                     <div className="flex items-center justify-between gap-3">
@@ -323,7 +307,7 @@ export function InvoiceQuoteSection() {
                   onChange={(e) => setNotes(e.target.value)}
                   rows={3}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white resize-none text-base"
-                  placeholder="Anything we should know (access, leak location, etc.)"
+                  placeholder="Anything we should know (access, target start date, budget range, etc.)"
                 />
               </div>
             </div>
@@ -378,10 +362,10 @@ export function InvoiceQuoteSection() {
                 <div>
                   <p className="text-sm font-semibold text-slate-600">Summary</p>
                   <p className="mt-1 text-2xl font-extrabold text-slate-900 leading-tight">
-                    {quote.serviceLabel}
+                    {quote.projectTypeLabel}
                   </p>
                   <p className="mt-2 text-base font-semibold text-slate-600">
-                    {quote.roofTypeLabel} • {quote.areaSqm} m²
+                    {quote.workTypeLabel} • {quote.areaSqm} m²
                   </p>
                 </div>
 
@@ -395,8 +379,8 @@ export function InvoiceQuoteSection() {
                         createdAt: quote.createdAt,
                         customer: { name, postcode, email, phone },
                         job: {
-                          roofTypeLabel: quote.roofTypeLabel,
-                          serviceLabel: quote.serviceLabel,
+                          projectTypeLabel: quote.projectTypeLabel,
+                          workTypeLabel: quote.workTypeLabel,
                           areaSqm: quote.areaSqm,
                         },
                         items: quote.items,

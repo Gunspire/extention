@@ -12,30 +12,30 @@ export function BeforeAfterSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionHeading subtitle="Transformation">
-              Tired Layout → Modern Family Home
+              Unused Loft → Bright New Bedroom
             </SectionHeading>
             <p className="text-slate-600 mb-8 leading-relaxed text-lg">
-              A good renovation isn’t just cosmetic — it’s planning, sequencing, and quality
-              workmanship. We reworked the layout, upgraded key finishes, and delivered a clean,
-              modern result with minimal hassle.
+              This loft conversion added a full new room with a dormer for head height and light.
+              We managed the structure, insulation, and finishing details—then handed back a clean,
+              ready-to-use space.
             </p>
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-500" />
                 <span className="text-slate-700 font-medium">
-                  Clear scope, timeline, and daily site tidy
+                  Dormer conversion for space + natural light
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-500" />
                 <span className="text-slate-700 font-medium">
-                  Layout improvements and upgraded finishes
+                  Insulation and comfort-focused build-up
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-500" />
                 <span className="text-slate-700 font-medium">
-                  Managed trades: electrics, plumbing, plastering
+                  Tidy finishing + snagging before handover
                 </span>
               </li>
             </ul>
@@ -46,7 +46,7 @@ export function BeforeAfterSection() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 font-medium">Location</p>
-                  <p className="text-sm font-bold text-slate-900">UK</p>
+                  <p className="text-sm font-bold text-slate-900">London, UK</p>
                 </div>
               </div>
               <div className="bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm flex items-center gap-3">
@@ -55,7 +55,7 @@ export function BeforeAfterSection() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 font-medium">Turnaround</p>
-                  <p className="text-sm font-bold text-slate-900">6–10 weeks</p>
+                  <p className="text-sm font-bold text-slate-900">6–12 weeks</p>
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@ export function BeforeAfterSection() {
           </div>
 
           <div className="relative">
-            <BeforeAfterSlider beforeImage="/gallery-2.png" afterImage="/gallery-3.png" />
+            <BeforeAfterSlider beforeImage="/after%202.jpg" afterImage="/picture%204.jpg" />
             <p className="text-center text-sm text-slate-500 mt-4 italic">
               Drag the slider to see the transformation
             </p>
@@ -86,8 +86,8 @@ export function BeforeAfterSection() {
                 <span className="text-xs font-semibold text-slate-500">Completed last week</span>
               </div>
               <p className="text-slate-700 leading-relaxed italic">
-                “Clear quote, great communication, and a tidy site every day. The renovation has
-                transformed the house — we’d use Convert Extend again.”
+                “The loft conversion was handled brilliantly—clear quote, tidy work, and the new
+                room feels like it was always meant to be there.”
               </p>
               <div className="flex items-center gap-3 mt-5">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold">
@@ -95,7 +95,7 @@ export function BeforeAfterSection() {
                 </div>
                 <div>
                   <p className="text-slate-900 font-bold text-sm">Helen P.</p>
-                  <p className="text-slate-500 text-xs">UK • Full renovation</p>
+                  <p className="text-slate-500 text-xs">London • Loft conversion</p>
                 </div>
               </div>
             </div>

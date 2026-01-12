@@ -5,7 +5,7 @@ import { Footer } from "../../sections/Footer";
 import { InvoiceQuoteSection } from "../../sections/InvoiceQuoteSection";
 
 export const metadata: Metadata = {
-  title: "Quote Builder | EliteGuard Roofing",
+  title: "Quote Builder | Convert Extend",
   description: "Generate a quote summary PDF (demo).",
 };
 

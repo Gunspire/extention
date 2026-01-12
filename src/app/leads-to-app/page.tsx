@@ -5,7 +5,7 @@ import { Footer } from "../../sections/Footer";
 import { LeadsToAppSection } from "../../sections/LeadsToAppSection";
 
 export const metadata: Metadata = {
-  title: "Leads to App | EliteGuard Roofing",
+  title: "Leads to App | Convert Extend",
   description: "Demo: website form submissions delivered instantly to your phone via our agency app.",
 };
 

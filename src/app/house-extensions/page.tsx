@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import { CheckCircle2, ClipboardList, Layers, Shield, Timer } from "lucide-react";
+import { CheckCircle2, ClipboardList, Hammer, Shield, Timer, Wrench } from "lucide-react";
 
 import { Button } from "../../components/Button";
 import { FAQItem } from "../../components/FAQItem";
@@ -14,36 +14,37 @@ import { ReviewsSection } from "../../sections/ReviewsSection";
 import { ServiceAreaSection } from "../../sections/ServiceAreaSection";
 
 export const metadata: Metadata = {
-  title: "Flat Roofing | EliteGuard Roofing",
+  title: "House Extensions | Convert Extend",
   description:
-    "Flat roofing installation and replacement across the UK. EPDM rubber, GRP fibreglass and felt systems with clean detailing and clear written quotes. Get a free quote today.",
-  alternates: { canonical: "/flat-roofing" },
+    "Design and build house extensions with clear written quotes, tidy sites, and a smooth end-to-end process. Get a free quote from Convert Extend.",
+  alternates: { canonical: "/house-extensions" },
   openGraph: {
-    title: "Flat Roofing | EliteGuard Roofing",
+    title: "House Extensions | Convert Extend",
     description:
-      "Modern flat roofs for garages and extensions—EPDM, GRP and felt systems installed properly with tidy workmanship.",
+      "Add space with a well-designed extension. Convert Extend manage design, planning support, build, and finishing — with clear timelines and tidy workmanship.",
     type: "website",
-    url: "/flat-roofing",
+    url: "/house-extensions",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flat Roofing | EliteGuard Roofing",
-    description: "EPDM, GRP and felt flat roofing installed properly. Get a free quote.",
+    title: "House Extensions | Convert Extend",
+    description: "Design & build house extensions with clear quotes and great finishes. Free quote available.",
   },
   robots: { index: true, follow: true },
 };
 
-export default function FlatRoofingPage() {
+export default function HouseExtensionsPage() {
   return (
     <main className="font-sans">
       <ServiceHero
-        serviceName="Flat Roofing"
-        headline="Modern flat roofing—watertight, durable, and finished cleanly"
-        description="We install and replace flat roofs using EPDM rubber, GRP fibreglass, and high-performance felt systems. Correct detailing at edges and outlets is what stops leaks—so we focus on the details."
-        backgroundImageSrc="/service-flat-roof.png"
-        defaultServiceNeeded="Flat Roofing (EPDM/Felt)"
+        serviceName="House Extensions"
+        headline="Add the space you need—designed to fit your home"
+        description="Rear, side and wraparound extensions designed around how you live. We manage the build end-to-end with clear written quotes, tidy sites, and communication you don’t have to chase."
+        backgroundImageSrc="/picture%201.jpg"
+        defaultServiceNeeded="House Extension"
       />
 
+      {/* Section 1: Included */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
@@ -51,15 +52,15 @@ export default function FlatRoofingPage() {
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/45 via-slate-900/20 to-transparent" />
                 <img
-                  src="/service-flat-roof.png"
-                  alt="Flat roof installation in progress"
+                  src="/picture%201.jpg"
+                  alt="Completed home extension exterior"
                   className="h-[420px] w-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="inline-flex flex-wrap gap-2 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                    {["EPDM", "GRP", "Torch-on felt"].map((t) => (
+                    {["Rear & side extensions", "Open-plan living", "Kitchens & bifolds"].map((t) => (
                       <span
                         key={t}
                         className="text-xs font-extrabold tracking-wide text-white/95 rounded-full bg-slate-950/25 px-3 py-1"
@@ -70,12 +71,11 @@ export default function FlatRoofingPage() {
                   </div>
                 </div>
               </div>
-
               <div className="mt-4 grid grid-cols-2 gap-4">
                 <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
                   <img
-                    src="/gallery-2.png"
-                    alt="Flat roof edge detailing"
+                    src="/picture%202.jpg"
+                    alt="Home improvement project detail"
                     className="h-36 w-full object-cover"
                     loading="lazy"
                     decoding="async"
@@ -83,8 +83,8 @@ export default function FlatRoofingPage() {
                 </div>
                 <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
                   <img
-                    src="/gallery-3.png"
-                    alt="Roofing materials and workmanship detail"
+                    src="/picture%203.jpg"
+                    alt="Finished home renovation exterior"
                     className="h-36 w-full object-cover"
                     loading="lazy"
                     decoding="async"
@@ -94,37 +94,33 @@ export default function FlatRoofingPage() {
             </div>
 
             <div className="lg:col-span-7">
-              <SectionHeading subtitle="Flat roofing">
-                What’s included in a flat roof installation
-              </SectionHeading>
-
+              <SectionHeading subtitle="House extensions">What’s included in a well-run extension</SectionHeading>
               <p className="text-base font-semibold text-slate-600 leading-relaxed max-w-2xl">
-                Flat roofs fail at the details—edges, outlets, upstands and junctions. We build the
-                system correctly so water sheds properly and the roof stays watertight for the long
-                term.
+                Great results come from good planning and sequencing. We focus on structure, weather-tightness,
+                and finishes — and keep the scope clear so there are no surprises.
               </p>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    t: "Survey-led system choice",
-                    d: "We recommend EPDM, GRP or felt based on the roof size, usage, and access.",
+                    t: "Survey, layout & feasibility",
+                    d: "We assess your home and goals, then advise on layout, access, and the best use of space.",
                     i: <ClipboardList className="w-5 h-5" />,
                   },
                   {
-                    t: "Deck prep and build-up",
-                    d: "We prepare the deck and build the roof correctly so the membrane performs.",
-                    i: <Layers className="w-5 h-5" />,
+                    t: "Structure & build",
+                    d: "Foundations, steels, walls and roof structure delivered safely and correctly.",
+                    i: <Hammer className="w-5 h-5" />,
                   },
                   {
-                    t: "Edge & outlet detailing",
-                    d: "Drip edges, trims, outlets and upstands detailed properly—common leak points.",
+                    t: "Trades coordination",
+                    d: "Electrics, plumbing, plastering and joinery sequenced properly for a smooth finish.",
+                    i: <Wrench className="w-5 h-5" />,
+                  },
+                  {
+                    t: "Finishing & handover",
+                    d: "Snagging, final checks, and a clean handover so you can enjoy the space immediately.",
                     i: <CheckCircle2 className="w-5 h-5" />,
-                  },
-                  {
-                    t: "Tidy finish & aftercare",
-                    d: "Clean site, clear handover, and simple guidance to keep the roof in good condition.",
-                    i: <Shield className="w-5 h-5" />,
                   },
                 ].map((c) => (
                   <div key={c.t} className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
@@ -144,12 +140,13 @@ export default function FlatRoofingPage() {
               <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center">
-                    <Timer className="w-5 h-5" />
+                    <Shield className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm font-extrabold text-slate-900">Designed for extensions & garages</div>
+                    <div className="text-sm font-extrabold text-slate-900">Clear, written scope</div>
                     <p className="mt-1 text-sm font-semibold text-slate-600 leading-relaxed">
-                      Perfect for warm roof upgrades, bay roofs, porches, garages and extensions.
+                      We keep scope, inclusions, and assumptions written and easy to understand — so you can approve
+                      confidently and budget properly.
                     </p>
                   </div>
                 </div>
@@ -168,16 +165,15 @@ export default function FlatRoofingPage() {
         </div>
       </section>
 
+      {/* Section 2: Process */}
       <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6">
-              <SectionHeading subtitle="Our process">
-                How we install a flat roof (step by step)
-              </SectionHeading>
+              <SectionHeading subtitle="Our process">How your extension works (step by step)</SectionHeading>
               <p className="text-base font-semibold text-slate-600 leading-relaxed max-w-xl">
-                Flat roofing is all about preparation and detailing. This is how we keep it clean,
-                predictable, and watertight.
+                We keep the process calm and predictable — survey, clear scope, a sensible build program, and a clean
+                handover.
               </p>
 
               <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -185,23 +181,23 @@ export default function FlatRoofingPage() {
                   {[
                     {
                       n: "1",
-                      t: "Survey & specification",
-                      d: "We confirm the roof size, condition, and recommend EPDM/GRP/felt based on performance needs.",
+                      t: "Initial visit & feasibility",
+                      d: "We discuss goals, assess constraints, and outline the best options for space, layout and budget.",
                     },
                     {
                       n: "2",
-                      t: "Preparation & protection",
-                      d: "Deck prep, trims, insulation (if required), and protective measures for a clean install.",
+                      t: "Design, scope & written quote",
+                      d: "Clear inclusions, realistic timeline, and what to expect — so you can plan with confidence.",
                     },
                     {
                       n: "3",
-                      t: "Install membrane/system",
-                      d: "System installed to spec with proper bonding/laminating and tidy edge work.",
+                      t: "Build & coordination",
+                      d: "We manage sequencing, quality checks, and a tidy site so the build runs smoothly.",
                     },
                     {
                       n: "4",
-                      t: "Detailing & checks",
-                      d: "Outlets, upstands and joints checked carefully—then handover and aftercare guidance.",
+                      t: "Snagging & handover",
+                      d: "Final checks, snag list, and a clean finish — ready for you to move into the new space.",
                     },
                   ].map((s) => (
                     <li key={s.n}>
@@ -230,8 +226,8 @@ export default function FlatRoofingPage() {
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
                 <img
-                  src="/service-flat-roof.png"
-                  alt="Completed flat roof with clean edge detailing"
+                  src="/picture%204.jpg"
+                  alt="A finished family home"
                   className="h-[460px] w-full object-cover"
                   loading="lazy"
                   decoding="async"
@@ -239,21 +235,22 @@ export default function FlatRoofingPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur-sm">
-                    <div className="text-white font-extrabold text-sm">Pro tip</div>
+                    <div className="text-white font-extrabold text-sm">Typical timeline</div>
                     <div className="mt-1 text-white/90 text-sm font-semibold">
-                      Most flat roof leaks come from edges and outlets—so we obsess over the details.
+                      Many extensions complete in <span className="text-white font-extrabold">8–16 weeks</span> depending
+                      on size, access and finishes.
                     </div>
                   </div>
                 </div>
               </div>
               <div className="mt-4 grid grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-slate-200 bg-white p-5">
-                  <div className="text-sm font-extrabold text-slate-900">Clean lines</div>
-                  <div className="mt-1 text-sm font-semibold text-slate-600">Neat trims and tidy joints.</div>
+                  <div className="text-sm font-extrabold text-slate-900">Tidy site</div>
+                  <div className="mt-1 text-sm font-semibold text-slate-600">Daily clean-up and respectful access.</div>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-5">
-                  <div className="text-sm font-extrabold text-slate-900">Watertight finish</div>
-                  <div className="mt-1 text-sm font-semibold text-slate-600">Built to shed water properly.</div>
+                  <div className="text-sm font-extrabold text-slate-900">Quality checks</div>
+                  <div className="mt-1 text-sm font-semibold text-slate-600">Key stage inspections and snagging.</div>
                 </div>
               </div>
             </div>
@@ -261,32 +258,33 @@ export default function FlatRoofingPage() {
         </div>
       </section>
 
+      {/* Section 3: FAQs */}
       <section className="py-14 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading subtitle="FAQ" center>
-            Flat roofing FAQs
+            House extension FAQs
           </SectionHeading>
 
           <div className="bg-white border border-slate-200 rounded-3xl shadow-sm px-6">
             <FAQItem
-              question="Which flat roof system is best—EPDM, GRP or felt?"
-              answer="It depends on roof size, detailing complexity, and budget. EPDM is durable and flexible, GRP is seamless and rigid, and felt can be a great value option when installed properly."
+              question="Do I need planning permission for an extension?"
+              answer="Sometimes. Many projects fall under permitted development, but it depends on size, location and constraints. We’ll help you understand what applies to your home."
             />
             <FAQItem
-              question="Can you install a warm roof (insulated) flat roof?"
-              answer="Yes. Where appropriate, we can upgrade insulation as part of the installation to improve comfort and reduce condensation risk."
+              question="How much does a house extension cost?"
+              answer="It depends on size, structure, and finishes. We provide clear written quotes with a defined scope so you can budget properly."
             />
             <FAQItem
-              question="How long should a flat roof last?"
-              answer="Lifespan varies by system and detailing, but a properly installed modern flat roof should last many years. We’ll advise on the best option for longevity."
+              question="Can we live in the house during the build?"
+              answer="Often, yes. We’ll explain what to expect, how we protect access/routes, and how we minimise disruption."
             />
             <FAQItem
-              question="Do flat roofs need maintenance?"
-              answer="Minimal maintenance helps: keep outlets clear, remove debris, and check seals occasionally—especially after storms."
+              question="Do you manage multiple trades?"
+              answer="Yes — we coordinate trades and sequencing so the project runs smoothly and finishes properly."
             />
             <FAQItem
-              question="Do you provide written quotes?"
-              answer="Yes—clear written scope and pricing, so you know exactly what’s included."
+              question="How do I get started?"
+              answer="Use the form at the top of the page or the quote builder and we’ll arrange a quick call/visit to understand your project."
             />
           </div>
         </div>

@@ -6,9 +6,9 @@ import { UpsidesBox } from "../../components/UpsidesBox";
 import { Footer } from "../../sections/Footer";
 
 export const metadata: Metadata = {
-  title: "Leave a Review | Apex Roofing",
+  title: "Leave a Review | Convert Extend",
   description:
-    "Quick review page for Apex Roofing. Select a star rating and, if you’re happy, you’ll be sent to Google to leave a public review.",
+    "Quick review page for Convert Extend. Select a star rating and, if you’re happy, you’ll be sent to Google to leave a public review.",
 };
 
 export default function ReviewPage() {

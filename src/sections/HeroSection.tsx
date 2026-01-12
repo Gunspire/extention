@@ -7,7 +7,7 @@ import { Button } from "../components/Button";
 import { cn } from "../lib/cn";
 
 export function HeroSection() {
-  const heroImages = ["/hero-1.png", "/hero-2.png"];
+  const heroImages = ["/picture%201.jpg", "/picture%202.jpg", "/picture%203.jpg", "/picture%204.jpg"];
   const [heroImageIndex, setHeroImageIndex] = React.useState(0);
 
   const [formStatus, setFormStatus] = React.useState<"idle" | "submitting" | "success">(

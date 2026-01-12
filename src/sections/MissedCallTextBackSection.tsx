@@ -26,7 +26,7 @@ function buildSms(opts: {
 }
 
 export function MissedCallTextBackSection() {
-  const [businessName, setBusinessName] = React.useState("EliteGuard Roofing");
+  const [businessName, setBusinessName] = React.useState("Convert Extend");
   const [callbackNumber, setCallbackNumber] = React.useState("0800 123 4567");
   const [timeframe, setTimeframe] = React.useState("30 minutes");
   const [includeQuoteLink, setIncludeQuoteLink] = React.useState(true);
@@ -255,7 +255,7 @@ export function MissedCallTextBackSection() {
 
                   <div className="mt-4 grid sm:grid-cols-3 gap-4">
                     {[
-                      { t: "Instant follow-up", d: "Customers get a reply even when you’re on a roof." },
+                      { t: "Instant follow-up", d: "Customers get a reply even when you’re on a job." },
                       { t: "More booked jobs", d: "Less missed leads, more conversions." },
                       { t: "Faster response", d: "Sets expectations and prompts a reply." },
                     ].map((c) => (

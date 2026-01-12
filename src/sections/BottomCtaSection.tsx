@@ -21,7 +21,7 @@ export function BottomCtaSection() {
   return (
     <section className="relative overflow-hidden py-16 lg:py-20">
       <div className="absolute inset-0">
-        <img src="/hero-1.png" alt="" aria-hidden="true" className="h-full w-full object-cover" />
+        <img src="/picture%201.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-blue-950/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-900/60 to-blue-900/40" />
       </div>
@@ -34,8 +34,8 @@ export function BottomCtaSection() {
               Get a Free Quote — Fast Response, No Obligation
             </h2>
             <p className="text-blue-100/90 mt-4 text-lg leading-relaxed">
-              Tell us what you need and we’ll come back with a clear, itemised quote. For leaks and
-              storm damage, call our emergency line.
+              Tell us what you need and we’ll come back with a clear, itemised quote for your project.
+              If you’re unsure which service fits, just describe your goals and we’ll guide you.
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -50,13 +50,13 @@ export function BottomCtaSection() {
                   <div>
                     <p className="text-white font-bold leading-tight">Call now</p>
                     <p className="text-blue-100/90 text-sm mt-1">0800 123 4567</p>
-                    <p className="text-blue-200 text-xs mt-1">24/7 emergency call-outs</p>
+                    <p className="text-blue-200 text-xs mt-1">Design &amp; build enquiries</p>
                   </div>
                 </div>
               </a>
 
               <a
-                href="https://wa.me/447700900000?text=Hi%20Apex%20Roofing%20%E2%80%94%20I%27d%20like%20a%20free%20quote%20please."
+                href="https://wa.me/447700900000?text=Hi%20Convert%20Extend%20%E2%80%94%20I%27d%20like%20a%20free%20quote%20please."
                 target="_blank"
                 rel="noreferrer"
                 className="group rounded-2xl bg-white/10 border border-white/15 backdrop-blur px-5 py-4 hover:bg-white/15 transition"
@@ -74,7 +74,7 @@ export function BottomCtaSection() {
               </a>
 
               <a
-                href="mailto:quotes@apexroofing.co.uk"
+                href="mailto:hello@convertextend.co.uk"
                 className="group rounded-2xl bg-white/10 border border-white/15 backdrop-blur px-5 py-4 hover:bg-white/15 transition sm:col-span-2"
               >
                 <div className="flex items-start gap-3">
@@ -83,9 +83,9 @@ export function BottomCtaSection() {
                   </div>
                   <div>
                     <p className="text-white font-bold leading-tight">Email</p>
-                    <p className="text-blue-100/90 text-sm mt-1">quotes@apexroofing.co.uk</p>
+                    <p className="text-blue-100/90 text-sm mt-1">hello@convertextend.co.uk</p>
                     <p className="text-blue-200 text-xs mt-1">
-                      Mon–Fri 8am–6pm • Weekend emergency support
+                      Mon–Fri 8am–6pm • Project enquiries
                     </p>
                   </div>
                 </div>
@@ -177,12 +177,10 @@ export function BottomCtaSection() {
                         <div className="space-y-1.5">
                           <label className="text-sm font-semibold text-slate-700">Service</label>
                           <select className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white">
-                            <option>Roof Repairs</option>
-                            <option>New Roof Installation</option>
-                            <option>Flat Roofing (EPDM/GRP/Felt)</option>
-                            <option>Guttering / Fascias / Soffits</option>
-                            <option>Chimney / Leadwork</option>
-                            <option>Emergency Call-out</option>
+                            <option>House Extension</option>
+                            <option>Loft Conversion</option>
+                            <option>Full Property Renovation</option>
+                            <option>Not sure yet</option>
                           </select>
                         </div>
                         <div className="space-y-1.5">
@@ -201,7 +199,7 @@ export function BottomCtaSection() {
                         <textarea
                           rows={4}
                           className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white resize-none"
-                          placeholder="Briefly describe the issue, and when it started. If it’s urgent, include the best time to call."
+                          placeholder="Briefly describe what you want to achieve and any key constraints (budget, timescales, access)."
                         />
                       </div>
 

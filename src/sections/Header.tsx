@@ -101,7 +101,7 @@ export function Header() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center">
-              <Logo className="h-[72px] sm:h-[84px]" />
+              <Logo className="h-[36px] sm:h-[42px]" />
               <span className="sr-only">Convert Extend</span>
             </Link>
           </div>

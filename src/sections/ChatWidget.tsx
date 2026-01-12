@@ -25,7 +25,7 @@ export function ChatWidget() {
             <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 px-5 py-4 text-white">
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-sm font-semibold text-blue-100">Apex Roofing Live Help</p>
+                  <p className="text-sm font-semibold text-blue-100">Convert Extend Live Help</p>
                   <p className="text-lg font-bold leading-tight">How can we help?</p>
                   <p className="text-xs text-blue-100/90 mt-1">Typical reply within 1 hour (Mon–Fri)</p>
                 </div>
@@ -62,7 +62,7 @@ export function ChatWidget() {
               ) : (
                 <>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {["Leak / repair", "New roof quote", "Flat roof", "Guttering", "Emergency"].map(
+                    {["House extension", "Loft conversion", "Full renovation", "Planning", "Not sure yet"].map(
                       (tag) => (
                         <button
                           key={tag}
@@ -120,7 +120,7 @@ export function ChatWidget() {
                     <div className="flex items-center justify-between gap-3 pt-1">
                       <div className="flex items-center gap-3 text-xs text-slate-500">
                         <a
-                          href="mailto:quotes@apexroofing.co.uk"
+                          href="mailto:hello@convertextend.co.uk"
                           className="inline-flex items-center gap-1 hover:text-slate-700"
                         >
                           <Mail className="w-3.5 h-3.5" /> Email

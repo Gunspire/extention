@@ -30,7 +30,7 @@ export function SeoContentSection() {
                   </span>
                   <span>
                     <span className="font-extrabold text-slate-900">Target the right searches:</span>{" "}
-                    “roof repairs in {`{area}`}”, “flat roof replacement {`{town}`}”, etc.
+                    “house extension in {`{area}`}”, “loft conversion {`{town}`}”, “full renovation {`{postcode}`}”, etc.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -77,7 +77,7 @@ export function SeoContentSection() {
                 {[
                   {
                     t: "Service intent",
-                    d: "“Emergency roof repair”, “flat roof replacement”, “new roof installation”…",
+                    d: "“house extension”, “loft conversion”, “full renovation”…",
                   },
                   {
                     t: "Local intent",

@@ -10,7 +10,7 @@ const PHONE_NUMBER_DISPLAY = "0800 123 4567";
 const PHONE_NUMBER_TEL = "08001234567";
 
 export function ProjectsHero() {
-  const heroImages = ["/hero-1.png", "/hero-2.png"];
+  const heroImages = ["/picture%201.jpg", "/picture%202.jpg", "/picture%203.jpg", "/picture%204.jpg"];
   const [heroImageIndex, setHeroImageIndex] = React.useState(0);
   const [formStatus, setFormStatus] = React.useState<"idle" | "submitting" | "success">("idle");
 
@@ -62,8 +62,8 @@ export function ProjectsHero() {
             </h1>
 
             <p className="mt-5 text-lg text-blue-50/90 font-medium leading-relaxed max-w-2xl">
-              Browse real roofing projects—from repairs to full replacements. If you like what you see,
-              request a quote and we’ll get back quickly with clear next steps.
+              Browse real home improvement projects—from extensions to loft conversions and full renovations. If you
+              like what you see, request a quote and we’ll get back quickly with clear next steps.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -107,7 +107,7 @@ export function ProjectsHero() {
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">Quote Requested!</h2>
                 <p className="text-slate-600">
-                  {"We'll be in touch within 24 hours to discuss your roofing needs."}
+                  {"We'll be in touch within 24 hours to discuss your project."}
                 </p>
                 <Button variant="outline" className="mt-6" onClick={() => setFormStatus("idle")}>
                   Request Another
@@ -155,12 +155,10 @@ export function ProjectsHero() {
                   <div className="space-y-1.5">
                     <label className="text-sm font-semibold text-slate-700">Service Needed</label>
                     <select className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white">
-                      <option>New Roof Installation</option>
-                      <option>Roof Repairs</option>
-                      <option>Flat Roofing (EPDM/Felt)</option>
-                      <option>Guttering & Fascias</option>
-                      <option>Chimney Repair</option>
-                      <option>Emergency Call-out</option>
+                      <option>House Extension</option>
+                      <option>Loft Conversion</option>
+                      <option>Full Property Renovation</option>
+                      <option>Not sure yet</option>
                     </select>
                   </div>
 

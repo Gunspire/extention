@@ -15,10 +15,10 @@ export function TrustStrip() {
     | { text: string; imageSrc: string; imageAlt: string }
   > = [
     { icon: ShieldCheck, text: "Fully Insured" },
-    { icon: BadgeCheck, text: "NFRC Member" },
+    { icon: BadgeCheck, text: "FMB Member" },
     { imageSrc: "/google-g.png", imageAlt: "Google", text: "4.9 Google Reviews" },
     { imageSrc: "/trustpilot.png", imageAlt: "Trustpilot", text: "TrustPilot Rated" },
-    { icon: CheckCircle2, text: "25 Year Guarantee" },
+    { icon: CheckCircle2, text: "Written Guarantees" },
     { icon: Award, text: "City & Guilds Qualified" },
     { icon: HardHat, text: "SafeContractor Accredited" },
     { icon: Building2, text: "Local Authority Approved" },
